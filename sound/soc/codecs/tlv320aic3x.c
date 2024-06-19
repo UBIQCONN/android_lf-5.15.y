@@ -472,6 +472,8 @@ static const struct snd_kcontrol_new aic3x_snd_controls[] = {
 			3, 0x1F, 0),
 	SOC_DOUBLE_R("AGC Signal Detection Debounce Control", LAGC_NOISE_DEBOUNCE, RAGC_NOISE_DEBOUNCE,
 			0, 0x07, 0),
+	SOC_SINGLE("Left H-Pass Filter Coefficient Switch", NEW_ADC_DIGITALPATH, 7, 0x01, 0),
+	SOC_SINGLE("Right H-Pass Filter Coefficient Switch", NEW_ADC_DIGITALPATH, 6, 0x01, 0),
 };
 
 /* For other than tlv320aic3104 */
