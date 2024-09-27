@@ -210,7 +210,6 @@ static int st7785_prepare(struct drm_panel *panel)
 
 	msleep(150);
 
-	dev_info(st7785->panel.dev, "%s %d\n", __func__, __LINE__);
 //	st7785_init_sequence(st7785);
 	if (st7785->reset) {
 		gpiod_set_value_cansleep(st7785->reset, 0);
@@ -289,7 +288,6 @@ static int st7785_get_modes(struct drm_panel *panel,
 	const struct drm_display_mode *desc_mode = st7785->desc->mode;
 	struct drm_display_mode *mode;
 
-	dev_info(st7785->panel.dev, "%s %d\n", __func__, __LINE__);
 	mode = drm_mode_duplicate(connector->dev, desc_mode);
 	if (!mode) {
 		dev_err(&st7785->dsi->dev, "failed to add mode %ux%u@%u\n",
@@ -310,7 +308,6 @@ static int st7785_get_modes(struct drm_panel *panel,
 	drm_display_info_set_bus_formats(&connector->display_info,
 					 rad_bus_formats,
 					 ARRAY_SIZE(rad_bus_formats));
-	dev_info(st7785->panel.dev, "%s %d\n", __func__, __LINE__);
 	return 1;
 }
 
