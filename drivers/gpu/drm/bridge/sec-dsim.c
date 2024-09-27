@@ -1282,14 +1282,14 @@ int sec_mipi_dsim_check_pll_out(void *driver_private,
 	 */
 	devm_kfree(dsim->dev, (void *)pmsk);
 
-	if (dsim->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE) {
-		hpar = sec_mipi_dsim_get_hblank_par(mode->name,
-						    drm_mode_vrefresh(mode),
-						    dsim->lanes);
-		dsim->hpar = hpar;
-		if (!hpar)
-			dev_dbg(dsim->dev, "no pre-exist hpar can be used\n");
-	}
+	// if (dsim->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE) {
+	// 	hpar = sec_mipi_dsim_get_hblank_par(mode->name,
+	// 					    drm_mode_vrefresh(mode),
+	// 					    dsim->lanes);
+	// 	dsim->hpar = hpar;
+	// 	if (!hpar)
+	// 		dev_dbg(dsim->dev, "no pre-exist hpar can be used\n");
+	// }
 
 	return 0;
 }
