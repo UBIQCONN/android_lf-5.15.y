@@ -210,6 +210,7 @@ static int st7785_prepare(struct drm_panel *panel)
 
 	msleep(150);
 
+	// dev_info(st7785->panel.dev, "%s %d\n", __func__, __LINE__);
 //	st7785_init_sequence(st7785);
 	if (st7785->reset) {
 		gpiod_set_value_cansleep(st7785->reset, 0);
